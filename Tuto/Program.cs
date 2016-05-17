@@ -11,10 +11,10 @@ namespace Tuto
         static string walletIp  = "1.1.1.1";
         static string walletUa = "ua";
         
-        static LemonWayAPI.Service_mb_xmlSoapClient soapClient = new LemonWayAPI.Service_mb_xmlSoapClient();
-
         static void GetWalletDetailsExample(string wallet)
         {
+            LemonWayAPI.Service_mb_xmlSoapClient soapClient = new LemonWayAPI.Service_mb_xmlSoapClient();
+
             var request = new LemonWayAPI.GetWalletDetailsRequest(); // Method Name + "Request"
 
             // Bind parameters
@@ -81,6 +81,8 @@ namespace Tuto
 
         static void GetWalletTransHistoryExample(string wallet)
         {
+            LemonWayAPI.Service_mb_xmlSoapClient soapClient = new LemonWayAPI.Service_mb_xmlSoapClient();
+
             var request = new LemonWayAPI.GetWalletTransHistoryRequest(); // Method Name + "Request"
 
             // Bind parameters
@@ -128,10 +130,18 @@ namespace Tuto
 
         static void Main(string[] args)
         {
-            Console.WriteLine("----------GetWalletDetailsExample----------");
-            GetWalletDetailsExample("testSDD");
-            Console.WriteLine("----------GetWalletTransHistoryExample----------");
-            GetWalletTransHistoryExample("testSDD");
+            try
+            {
+                Console.WriteLine("----------GetWalletDetailsExample----------");
+                GetWalletDetailsExample("testSDD");
+                Console.WriteLine("----------GetWalletTransHistoryExample----------");
+                GetWalletTransHistoryExample("testSDD");
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine(ex);
+            }
+
             Console.ReadKey();
         }
     }
