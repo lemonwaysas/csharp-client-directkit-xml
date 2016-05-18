@@ -1,6 +1,6 @@
 # c-sharp-client-directkit-xml
 
-This is an example of cosuming [LemonWay API XML WebService](http://documentation.lemonway.fr/api-en) using C#.
+This is an example of consuming [LemonWay API XML WebService](http://documentation.lemonway.fr/api-en) using C#.
 
 Instructions:
 
