@@ -10,7 +10,7 @@ namespace Tuto
         static string version   = "1.8";
         static string walletIp  = "1.1.1.1";
         static string walletUa = "ua";
-        
+
         static void GetWalletDetailsExample(string wallet)
         {
             LemonWayAPI.Service_mb_xmlSoapClient soapClient = new LemonWayAPI.Service_mb_xmlSoapClient();
@@ -32,10 +32,11 @@ namespace Tuto
             // Handle error
             if (result.E != null)
             {
-                foreach (System.Reflection.PropertyInfo eProperty in result.E.GetType().GetProperties())
-                {
-                    Console.WriteLine(eProperty.Name + ": " + eProperty.GetValue(result.E));
-                }
+                Console.WriteLine("Error: " + result.E.Error);
+                Console.WriteLine("Code: " + result.E.Code);
+                Console.WriteLine("Msg: " + result.E.Msg);
+                Console.WriteLine("Prio: " + result.E.Prio);
+                Console.WriteLine("INT_MSG: " + result.E.INT_MSG);
             }
             else
             {
@@ -71,9 +72,14 @@ namespace Tuto
                 for (int i = 0; i < result.WALLET.CARDS.Length; i++)
                 {
                     Console.WriteLine("CARDS[" + i + "].ID: " + result.WALLET.CARDS[i].ID);
-                    foreach (System.Reflection.PropertyInfo extraProterty in result.WALLET.CARDS[i].EXTRA.GetType().GetProperties())
+                    if (result.WALLET.CARDS[i].EXTRA != null)
                     {
-                        Console.WriteLine("CARDS[" + i + "]." + extraProterty.Name + ": " + extraProterty.GetValue(result.WALLET.CARDS[i].EXTRA));
+                        Console.WriteLine("CARDS[" + i + "].EXTRA.IS3DS: " + result.WALLET.CARDS[i].EXTRA.IS3DS);
+                        Console.WriteLine("CARDS[" + i + "].EXTRA.CTRY: " + result.WALLET.CARDS[i].EXTRA.CTRY);
+                        Console.WriteLine("CARDS[" + i + "].EXTRA.AUTH: " + result.WALLET.CARDS[i].EXTRA.AUTH);
+                        Console.WriteLine("CARDS[" + i + "].EXTRA.NUM: " + result.WALLET.CARDS[i].EXTRA.NUM);
+                        Console.WriteLine("CARDS[" + i + "].EXTRA.EXP: " + result.WALLET.CARDS[i].EXTRA.EXP);
+                        Console.WriteLine("CARDS[" + i + "].EXTRA.TYP: " + result.WALLET.CARDS[i].EXTRA.TYP);
                     }
                 }
             }
@@ -100,30 +106,40 @@ namespace Tuto
             // Handle error
             if (result.E != null)
             {
-                foreach (System.Reflection.PropertyInfo eProperty in result.E.GetType().GetProperties())
-                {
-                    Console.WriteLine(eProperty.Name + ": " + eProperty.GetValue(result.E));
-                }
+                Console.WriteLine("Error: " + result.E.Error);
+                Console.WriteLine("Code: " + result.E.Code);
+                Console.WriteLine("Msg: " + result.E.Msg);
+                Console.WriteLine("Prio: " + result.E.Prio);
+                Console.WriteLine("INT_MSG: " + result.E.INT_MSG);
             }
             else
             {
                 for (int i = 0; i < result.TRANS.Length; i++)
                 {
                     Console.WriteLine("**********TRANS[" + i + "]**********");
-                    foreach (System.Reflection.PropertyInfo transProterty in result.TRANS[i].GetType().GetProperties())
+                    Console.WriteLine("TRANS[" + i + "].ID: " + result.TRANS[i].ID);
+                    Console.WriteLine("TRANS[" + i + "].DATE: " + result.TRANS[i].DATE);
+                    Console.WriteLine("TRANS[" + i + "].SEN: " + result.TRANS[i].SEN);
+                    Console.WriteLine("TRANS[" + i + "].REC: " + result.TRANS[i].REC);
+                    Console.WriteLine("TRANS[" + i + "].DEB: " + result.TRANS[i].DEB);
+                    Console.WriteLine("TRANS[" + i + "].CRED: " + result.TRANS[i].CRED);
+                    Console.WriteLine("TRANS[" + i + "].COM: " + result.TRANS[i].COM);
+                    Console.WriteLine("TRANS[" + i + "].MSG: " + result.TRANS[i].MSG);
+                    Console.WriteLine("TRANS[" + i + "].STATUS: " + result.TRANS[i].STATUS);
+                    if (result.TRANS[i].EXTRA != null)
                     {
-                        if (transProterty.Name == "EXTRA" && transProterty.GetValue(result.TRANS[i]) != null)
-                        {
-                            foreach (System.Reflection.PropertyInfo extraProterty in result.TRANS[i].EXTRA.GetType().GetProperties())
-                            {
-                                Console.WriteLine("TRANS[" + i + "].EXTRA." + extraProterty.Name + ": " + extraProterty.GetValue(result.TRANS[i].EXTRA));
-                            }
-                        }
-                        else
-                        {
-                            Console.WriteLine("TRANS[" + i + "]." + transProterty.Name + ": " + transProterty.GetValue(result.TRANS[i]));
-                        }
+                        Console.WriteLine("TRANS[" + i + "].EXTRA.IS3DS: " + result.TRANS[i].EXTRA.IS3DS);
+                        Console.WriteLine("TRANS[" + i + "].EXTRA.CTRY: " + result.TRANS[i].EXTRA.CTRY);
+                        Console.WriteLine("TRANS[" + i + "].EXTRA.AUTH: " + result.TRANS[i].EXTRA.AUTH);
                     }
+                   
+                    Console.WriteLine("TRANS[" + i + "].INT_MSG: " + result.TRANS[i].INT_MSG);
+                    Console.WriteLine("TRANS[" + i + "].MLABEL: " + result.TRANS[i].MLABEL);
+                    Console.WriteLine("TRANS[" + i + "].TYPE: " + result.TRANS[i].TYPE);
+                    Console.WriteLine("TRANS[" + i + "].PRIVATE_DATA: " + result.TRANS[i].PRIVATE_DATA);
+                    Console.WriteLine("TRANS[" + i + "].SCHEDULED_DATE: " + result.TRANS[i].SCHEDULED_DATE);
+                    Console.WriteLine("TRANS[" + i + "].MTOKEN: " + result.TRANS[i].MTOKEN);
+                    Console.WriteLine("TRANS[" + i + "].METHOD: " + result.TRANS[i].METHOD);
                 }
             }
         }
