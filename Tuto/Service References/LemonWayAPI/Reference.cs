@@ -375,6 +375,14 @@ namespace Tuto.LemonWayAPI {
         [System.ServiceModel.OperationContractAttribute(Action="Service_mb_xml/MoneyInPayTrailInit", ReplyAction="*")]
         System.Threading.Tasks.Task<Tuto.LemonWayAPI.MoneyInPayTrailInitResponse> MoneyInPayTrailInitAsync(Tuto.LemonWayAPI.MoneyInPayTrailInitRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="Service_mb_xml/MoneyInMobilePayInit", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WsResult))]
+        Tuto.LemonWayAPI.MoneyInMobilePayInitResponse MoneyInMobilePayInit(Tuto.LemonWayAPI.MoneyInMobilePayInitRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Service_mb_xml/MoneyInMobilePayInit", ReplyAction="*")]
+        System.Threading.Tasks.Task<Tuto.LemonWayAPI.MoneyInMobilePayInitResponse> MoneyInMobilePayInitAsync(Tuto.LemonWayAPI.MoneyInMobilePayInitRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="Service_mb_xml/CreatePaymentForm", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WsResult))]
@@ -382,10 +390,26 @@ namespace Tuto.LemonWayAPI {
         
         [System.ServiceModel.OperationContractAttribute(Action="Service_mb_xml/CreatePaymentForm", ReplyAction="*")]
         System.Threading.Tasks.Task<Tuto.LemonWayAPI.CreatePaymentFormResponse> CreatePaymentFormAsync(Tuto.LemonWayAPI.CreatePaymentFormRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Service_mb_xml/DisablePaymentForm", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WsResult))]
+        Tuto.LemonWayAPI.DisablePaymentFormResponse DisablePaymentForm(Tuto.LemonWayAPI.DisablePaymentFormRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Service_mb_xml/DisablePaymentForm", ReplyAction="*")]
+        System.Threading.Tasks.Task<Tuto.LemonWayAPI.DisablePaymentFormResponse> DisablePaymentFormAsync(Tuto.LemonWayAPI.DisablePaymentFormRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Service_mb_xml/GetCompletedPaymentForm", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WsResult))]
+        Tuto.LemonWayAPI.GetCompletedPaymentFormResponse GetCompletedPaymentForm(Tuto.LemonWayAPI.GetCompletedPaymentFormRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Service_mb_xml/GetCompletedPaymentForm", ReplyAction="*")]
+        System.Threading.Tasks.Task<Tuto.LemonWayAPI.GetCompletedPaymentFormResponse> GetCompletedPaymentFormAsync(Tuto.LemonWayAPI.GetCompletedPaymentFormRequest request);
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -408,7 +432,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -454,7 +478,263 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="Service_mb_xml")]
+    public partial class PaymentFormDetails : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string idField;
+        
+        private string optIdField;
+        
+        private string parentIdField;
+        
+        private string parentCommentField;
+        
+        private string walletPayerField;
+        
+        private string walletReceiverField;
+        
+        private string amountTotField;
+        
+        private string commentField;
+        
+        private string firstNamePayerField;
+        
+        private string lastNamePayerField;
+        
+        private string emailPayerField;
+        
+        private string statusField;
+        
+        private string utcdateField;
+        
+        private string createdField;
+        
+        private string returnUrlField;
+        
+        private string cancelUrlField;
+        
+        private string errorUrlField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string optId {
+            get {
+                return this.optIdField;
+            }
+            set {
+                this.optIdField = value;
+                this.RaisePropertyChanged("optId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string parentId {
+            get {
+                return this.parentIdField;
+            }
+            set {
+                this.parentIdField = value;
+                this.RaisePropertyChanged("parentId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string parentComment {
+            get {
+                return this.parentCommentField;
+            }
+            set {
+                this.parentCommentField = value;
+                this.RaisePropertyChanged("parentComment");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string walletPayer {
+            get {
+                return this.walletPayerField;
+            }
+            set {
+                this.walletPayerField = value;
+                this.RaisePropertyChanged("walletPayer");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string walletReceiver {
+            get {
+                return this.walletReceiverField;
+            }
+            set {
+                this.walletReceiverField = value;
+                this.RaisePropertyChanged("walletReceiver");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string amountTot {
+            get {
+                return this.amountTotField;
+            }
+            set {
+                this.amountTotField = value;
+                this.RaisePropertyChanged("amountTot");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string comment {
+            get {
+                return this.commentField;
+            }
+            set {
+                this.commentField = value;
+                this.RaisePropertyChanged("comment");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string firstNamePayer {
+            get {
+                return this.firstNamePayerField;
+            }
+            set {
+                this.firstNamePayerField = value;
+                this.RaisePropertyChanged("firstNamePayer");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string lastNamePayer {
+            get {
+                return this.lastNamePayerField;
+            }
+            set {
+                this.lastNamePayerField = value;
+                this.RaisePropertyChanged("lastNamePayer");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string emailPayer {
+            get {
+                return this.emailPayerField;
+            }
+            set {
+                this.emailPayerField = value;
+                this.RaisePropertyChanged("emailPayer");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public string status {
+            get {
+                return this.statusField;
+            }
+            set {
+                this.statusField = value;
+                this.RaisePropertyChanged("status");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public string utcdate {
+            get {
+                return this.utcdateField;
+            }
+            set {
+                this.utcdateField = value;
+                this.RaisePropertyChanged("utcdate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public string created {
+            get {
+                return this.createdField;
+            }
+            set {
+                this.createdField = value;
+                this.RaisePropertyChanged("created");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public string returnUrl {
+            get {
+                return this.returnUrlField;
+            }
+            set {
+                this.returnUrlField = value;
+                this.RaisePropertyChanged("returnUrl");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public string cancelUrl {
+            get {
+                return this.cancelUrlField;
+            }
+            set {
+                this.cancelUrlField = value;
+                this.RaisePropertyChanged("cancelUrl");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        public string errorUrl {
+            get {
+                return this.errorUrlField;
+            }
+            set {
+                this.errorUrlField = value;
+                this.RaisePropertyChanged("errorUrl");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -473,7 +753,7 @@ namespace Tuto.LemonWayAPI {
         
         private string walletUaField;
         
-        private string amountTotField;
+        private string amountTotRangeField;
         
         private string amountComField;
         
@@ -496,6 +776,12 @@ namespace Tuto.LemonWayAPI {
         private string emailPayerField;
         
         private string styleField;
+        
+        private string atosStyleField;
+        
+        private string notifUrlField;
+        
+        private string optionsField;
         
         private string activeField;
         
@@ -573,13 +859,13 @@ namespace Tuto.LemonWayAPI {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public string amountTot {
+        public string amountTotRange {
             get {
-                return this.amountTotField;
+                return this.amountTotRangeField;
             }
             set {
-                this.amountTotField = value;
-                this.RaisePropertyChanged("amountTot");
+                this.amountTotRangeField = value;
+                this.RaisePropertyChanged("amountTotRange");
             }
         }
         
@@ -717,6 +1003,42 @@ namespace Tuto.LemonWayAPI {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+        public string atosStyle {
+            get {
+                return this.atosStyleField;
+            }
+            set {
+                this.atosStyleField = value;
+                this.RaisePropertyChanged("atosStyle");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
+        public string notifUrl {
+            get {
+                return this.notifUrlField;
+            }
+            set {
+                this.notifUrlField = value;
+                this.RaisePropertyChanged("notifUrl");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
+        public string options {
+            get {
+                return this.optionsField;
+            }
+            set {
+                this.optionsField = value;
+                this.RaisePropertyChanged("options");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
         public string active {
             get {
                 return this.activeField;
@@ -738,7 +1060,53 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="Service_mb_xml")]
+    public partial class MOBILEPAYINIT : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string idField;
+        
+        private string actionUrlField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string ID {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("ID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string actionUrl {
+            get {
+                return this.actionUrlField;
+            }
+            set {
+                this.actionUrlField = value;
+                this.RaisePropertyChanged("actionUrl");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -784,7 +1152,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -830,7 +1198,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -876,7 +1244,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -908,7 +1276,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -920,7 +1288,7 @@ namespace Tuto.LemonWayAPI {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HPAY_SENDPAYMENT))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HPAY_MONEYINCHEQUEINIT))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HPAY_GETCHARGEBACKS))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1050,7 +1418,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1059,7 +1427,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1110,7 +1478,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1226,7 +1594,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1272,7 +1640,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1430,7 +1798,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1476,7 +1844,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1508,7 +1876,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1519,7 +1887,7 @@ namespace Tuto.LemonWayAPI {
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HPAY_MONEYINNEOSURF))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HPAYMONEYINVALIDATE))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1677,7 +2045,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1686,7 +2054,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1760,7 +2128,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1890,7 +2258,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1922,7 +2290,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1954,7 +2322,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1987,7 +2355,7 @@ namespace Tuto.LemonWayAPI {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(UNREGISTERSDDMANDATE))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2033,7 +2401,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2042,7 +2410,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2088,7 +2456,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2120,7 +2488,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2130,6 +2498,8 @@ namespace Tuto.LemonWayAPI {
         private string idField;
         
         private string bALField;
+        
+        private string sField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -2155,6 +2525,18 @@ namespace Tuto.LemonWayAPI {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string S {
+            get {
+                return this.sField;
+            }
+            set {
+                this.sField = value;
+                this.RaisePropertyChanged("S");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -2166,7 +2548,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2198,7 +2580,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2300,7 +2682,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2388,7 +2770,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2476,7 +2858,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2550,7 +2932,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2583,7 +2965,7 @@ namespace Tuto.LemonWayAPI {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(TRANS_GETMONEYINSDD))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2617,7 +2999,7 @@ namespace Tuto.LemonWayAPI {
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HPAY_GETMONEYINCHEQUEDETAILS))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HPAY_GETMONEYINIBANDETAILS))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2775,7 +3157,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2798,7 +3180,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2807,7 +3189,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2817,7 +3199,7 @@ namespace Tuto.LemonWayAPI {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HPAY_GETWALLETTRANSHISTORY))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2836,13 +3218,15 @@ namespace Tuto.LemonWayAPI {
         
         private string cREDField;
         
+        private string rEFUNDField;
+        
         private string cOMField;
         
         private string mSGField;
         
         private string sTATUSField;
         
-        private EXTRA_MONEYIN eXTRAField;
+        private EXTRA eXTRAField;
         
         private string iNT_MSGField;
         
@@ -2922,6 +3306,18 @@ namespace Tuto.LemonWayAPI {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string REFUND {
+            get {
+                return this.rEFUNDField;
+            }
+            set {
+                this.rEFUNDField = value;
+                this.RaisePropertyChanged("REFUND");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public string COM {
             get {
                 return this.cOMField;
@@ -2933,7 +3329,7 @@ namespace Tuto.LemonWayAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public string MSG {
             get {
                 return this.mSGField;
@@ -2945,7 +3341,7 @@ namespace Tuto.LemonWayAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         public string STATUS {
             get {
                 return this.sTATUSField;
@@ -2957,8 +3353,8 @@ namespace Tuto.LemonWayAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
-        public EXTRA_MONEYIN EXTRA {
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public EXTRA EXTRA {
             get {
                 return this.eXTRAField;
             }
@@ -2969,7 +3365,7 @@ namespace Tuto.LemonWayAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
         public string INT_MSG {
             get {
                 return this.iNT_MSGField;
@@ -2981,7 +3377,7 @@ namespace Tuto.LemonWayAPI {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
         public string MLABEL {
             get {
                 return this.mLABELField;
@@ -3003,18 +3399,24 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="Service_mb_xml")]
-    public partial class EXTRA_MONEYIN : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class EXTRA : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string iS3DSField;
         
         private string cTRYField;
         
         private string aUTHField;
+        
+        private string nUMField;
+        
+        private string eXPField;
+        
+        private string tYPField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -3052,6 +3454,42 @@ namespace Tuto.LemonWayAPI {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string NUM {
+            get {
+                return this.nUMField;
+            }
+            set {
+                this.nUMField = value;
+                this.RaisePropertyChanged("NUM");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string EXP {
+            get {
+                return this.eXPField;
+            }
+            set {
+                this.eXPField = value;
+                this.RaisePropertyChanged("EXP");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string TYP {
+            get {
+                return this.tYPField;
+            }
+            set {
+                this.tYPField = value;
+                this.RaisePropertyChanged("TYP");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -3063,7 +3501,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3142,7 +3580,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3314,7 +3752,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3486,7 +3924,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3518,7 +3956,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3564,7 +4002,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3596,7 +4034,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3628,7 +4066,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3716,7 +4154,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3762,7 +4200,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3794,7 +4232,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3854,7 +4292,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3886,7 +4324,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3913,7 +4351,7 @@ namespace Tuto.LemonWayAPI {
         
         private string sTATUSField;
         
-        private EXTRA_MONEYIN eXTRAField;
+        private EXTRA eXTRAField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -4037,7 +4475,7 @@ namespace Tuto.LemonWayAPI {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=10)]
-        public EXTRA_MONEYIN EXTRA {
+        public EXTRA EXTRA {
             get {
                 return this.eXTRAField;
             }
@@ -4060,7 +4498,7 @@ namespace Tuto.LemonWayAPI {
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(TRANS_MONEYINSDDINIT))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(TRANS_IDEALCONFIRM))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4092,7 +4530,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4101,7 +4539,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4110,7 +4548,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4240,7 +4678,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4286,7 +4724,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4318,109 +4756,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="Service_mb_xml")]
-    public partial class EXTRA : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string iS3DSField;
-        
-        private string cTRYField;
-        
-        private string aUTHField;
-        
-        private string nUMField;
-        
-        private string eXPField;
-        
-        private string tYPField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string IS3DS {
-            get {
-                return this.iS3DSField;
-            }
-            set {
-                this.iS3DSField = value;
-                this.RaisePropertyChanged("IS3DS");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string CTRY {
-            get {
-                return this.cTRYField;
-            }
-            set {
-                this.cTRYField = value;
-                this.RaisePropertyChanged("CTRY");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string AUTH {
-            get {
-                return this.aUTHField;
-            }
-            set {
-                this.aUTHField = value;
-                this.RaisePropertyChanged("AUTH");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string NUM {
-            get {
-                return this.nUMField;
-            }
-            set {
-                this.nUMField = value;
-                this.RaisePropertyChanged("NUM");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string EXP {
-            get {
-                return this.eXPField;
-            }
-            set {
-                this.eXPField = value;
-                this.RaisePropertyChanged("EXP");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public string TYP {
-            get {
-                return this.tYPField;
-            }
-            set {
-                this.tYPField = value;
-                this.RaisePropertyChanged("TYP");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4466,7 +4802,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4494,6 +4830,20 @@ namespace Tuto.LemonWayAPI {
         private string lWIDField;
         
         private CARD[] cARDSField;
+        
+        private string firstNameField;
+        
+        private string lastNameField;
+        
+        private string companyNameField;
+        
+        private string companyDescriptionField;
+        
+        private string companyWebsiteField;
+        
+        private string isDebtorField;
+        
+        private string payerOrBeneficiaryField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -4627,6 +4977,90 @@ namespace Tuto.LemonWayAPI {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public string FirstName {
+            get {
+                return this.firstNameField;
+            }
+            set {
+                this.firstNameField = value;
+                this.RaisePropertyChanged("FirstName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public string LastName {
+            get {
+                return this.lastNameField;
+            }
+            set {
+                this.lastNameField = value;
+                this.RaisePropertyChanged("LastName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public string CompanyName {
+            get {
+                return this.companyNameField;
+            }
+            set {
+                this.companyNameField = value;
+                this.RaisePropertyChanged("CompanyName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public string CompanyDescription {
+            get {
+                return this.companyDescriptionField;
+            }
+            set {
+                this.companyDescriptionField = value;
+                this.RaisePropertyChanged("CompanyDescription");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public string CompanyWebsite {
+            get {
+                return this.companyWebsiteField;
+            }
+            set {
+                this.companyWebsiteField = value;
+                this.RaisePropertyChanged("CompanyWebsite");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        public string isDebtor {
+            get {
+                return this.isDebtorField;
+            }
+            set {
+                this.isDebtorField = value;
+                this.RaisePropertyChanged("isDebtor");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        public string payerOrBeneficiary {
+            get {
+                return this.payerOrBeneficiaryField;
+            }
+            set {
+                this.payerOrBeneficiaryField = value;
+                this.RaisePropertyChanged("payerOrBeneficiary");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -4638,7 +5072,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4670,7 +5104,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4842,7 +5276,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4874,7 +5308,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4962,7 +5396,10 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GetCompletedPaymentFormResult))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DisablePaymentFormResult))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(CreatePaymentFormResult))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MoneyInMobilePayInitResult))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MoneyInPayTrailInitResult))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MoneyInMbwayInitResult))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MoneyInPayshopInitResult))]
@@ -4993,6 +5430,7 @@ namespace Tuto.LemonWayAPI {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GetMoneyInTransDetailsResultObject))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GetPaymentDetailsResult))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MoneyOutResultObject))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RegisterIBANExtendedResult))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(RegisterIBANResult))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MoneyInValidateResult))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(UnregisterCardResult))]
@@ -5003,9 +5441,10 @@ namespace Tuto.LemonWayAPI {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MoneyInResult))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GetWalletDetailsResult))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(UpdateWalletStatusResult))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(UpdateWalletDetailsResult))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(FastPayResult))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(RegisterWalletResult))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5037,7 +5476,53 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="Service_mb_xml")]
+    public partial class GetCompletedPaymentFormResult : WsResult {
+        
+        private PaymentFormDetails formField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public PaymentFormDetails form {
+            get {
+                return this.formField;
+            }
+            set {
+                this.formField = value;
+                this.RaisePropertyChanged("form");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="Service_mb_xml")]
+    public partial class DisablePaymentFormResult : WsResult {
+        
+        private string messageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string message {
+            get {
+                return this.messageField;
+            }
+            set {
+                this.messageField = value;
+                this.RaisePropertyChanged("message");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5060,7 +5545,30 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="Service_mb_xml")]
+    public partial class MoneyInMobilePayInitResult : WsResult {
+        
+        private MOBILEPAYINIT mOBILEPAYINITField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public MOBILEPAYINIT MOBILEPAYINIT {
+            get {
+                return this.mOBILEPAYINITField;
+            }
+            set {
+                this.mOBILEPAYINITField = value;
+                this.RaisePropertyChanged("MOBILEPAYINIT");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5083,7 +5591,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5106,7 +5614,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5129,7 +5637,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5152,7 +5660,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5175,7 +5683,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5198,7 +5706,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5221,7 +5729,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5244,7 +5752,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5267,7 +5775,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5290,7 +5798,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5313,7 +5821,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5337,7 +5845,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5361,7 +5869,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5385,7 +5893,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5408,7 +5916,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5431,7 +5939,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5454,7 +5962,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5477,30 +5985,30 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="Service_mb_xml")]
     public partial class MoneyInIDealConfirmResult : WsResult {
         
-        private TRANS_IDEALCONFIRM tRANSField;
+        private TRANS_IDEALCONFIRM iDEALField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public TRANS_IDEALCONFIRM TRANS {
+        public TRANS_IDEALCONFIRM IDEAL {
             get {
-                return this.tRANSField;
+                return this.iDEALField;
             }
             set {
-                this.tRANSField = value;
-                this.RaisePropertyChanged("TRANS");
+                this.iDEALField = value;
+                this.RaisePropertyChanged("IDEAL");
             }
         }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5523,7 +6031,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5546,7 +6054,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5570,7 +6078,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5593,7 +6101,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5617,7 +6125,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5641,7 +6149,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5664,7 +6172,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5688,7 +6196,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5712,7 +6220,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5736,7 +6244,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5759,7 +6267,30 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="Service_mb_xml")]
+    public partial class RegisterIBANExtendedResult : WsResult {
+        
+        private IBAN_REGISTER iBANField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public IBAN_REGISTER IBAN {
+            get {
+                return this.iBANField;
+            }
+            set {
+                this.iBANField = value;
+                this.RaisePropertyChanged("IBAN");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5782,7 +6313,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5805,7 +6336,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5828,7 +6359,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5851,7 +6382,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5874,7 +6405,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5897,7 +6428,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5920,7 +6451,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5943,7 +6474,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5966,7 +6497,7 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5989,7 +6520,30 @@ namespace Tuto.LemonWayAPI {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="Service_mb_xml")]
+    public partial class UpdateWalletDetailsResult : WsResult {
+        
+        private WALLET_REGISTER wALLETField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public WALLET_REGISTER WALLET {
+            get {
+                return this.wALLETField;
+            }
+            set {
+                this.wALLETField = value;
+                this.RaisePropertyChanged("WALLET");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6103,6 +6657,9 @@ namespace Tuto.LemonWayAPI {
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=28)]
         public string walletUa;
         
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=29)]
+        public string isTechWallet;
+        
         public RegisterWalletRequest() {
         }
         
@@ -6135,7 +6692,8 @@ namespace Tuto.LemonWayAPI {
                     string language, 
                     string version, 
                     string walletIp, 
-                    string walletUa) {
+                    string walletUa, 
+                    string isTechWallet) {
             this.wallet = wallet;
             this.clientMail = clientMail;
             this.clientTitle = clientTitle;
@@ -6165,6 +6723,7 @@ namespace Tuto.LemonWayAPI {
             this.version = version;
             this.walletIp = walletIp;
             this.walletUa = walletUa;
+            this.isTechWallet = isTechWallet;
         }
     }
     
@@ -6398,6 +6957,9 @@ namespace Tuto.LemonWayAPI {
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=27)]
         public string walletUa;
         
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=28)]
+        public string newPayerOrBeneficiary;
+        
         public UpdateWalletDetailsRequest() {
         }
         
@@ -6429,7 +6991,8 @@ namespace Tuto.LemonWayAPI {
                     string language, 
                     string version, 
                     string walletIp, 
-                    string walletUa) {
+                    string walletUa, 
+                    string newPayerOrBeneficiary) {
             this.wallet = wallet;
             this.newEmail = newEmail;
             this.newTitle = newTitle;
@@ -6458,6 +7021,7 @@ namespace Tuto.LemonWayAPI {
             this.version = version;
             this.walletIp = walletIp;
             this.walletUa = walletUa;
+            this.newPayerOrBeneficiary = newPayerOrBeneficiary;
         }
     }
     
@@ -6468,13 +7032,13 @@ namespace Tuto.LemonWayAPI {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public Tuto.LemonWayAPI.UpdateWalletStatusResult UpdateWalletStatusResult;
+        public Tuto.LemonWayAPI.UpdateWalletDetailsResult UpdateWalletDetailsResult;
         
         public UpdateWalletDetailsResponse() {
         }
         
-        public UpdateWalletDetailsResponse(Tuto.LemonWayAPI.UpdateWalletStatusResult UpdateWalletStatusResult) {
-            this.UpdateWalletStatusResult = UpdateWalletStatusResult;
+        public UpdateWalletDetailsResponse(Tuto.LemonWayAPI.UpdateWalletDetailsResult UpdateWalletDetailsResult) {
+            this.UpdateWalletDetailsResult = UpdateWalletDetailsResult;
         }
     }
     
@@ -7501,21 +8065,24 @@ namespace Tuto.LemonWayAPI {
         public string intermediaryBankCountry;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=11)]
-        public string wlLogin;
+        public string comment;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=12)]
-        public string wlPass;
+        public string wlLogin;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=13)]
-        public string language;
+        public string wlPass;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=14)]
-        public string version;
+        public string language;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=15)]
-        public string walletIp;
+        public string version;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=16)]
+        public string walletIp;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=17)]
         public string walletUa;
         
         public RegisterIBANExtendedRequest() {
@@ -7533,6 +8100,7 @@ namespace Tuto.LemonWayAPI {
                     string intermediaryBicCode, 
                     string intermediaryBankName, 
                     string intermediaryBankCountry, 
+                    string comment, 
                     string wlLogin, 
                     string wlPass, 
                     string language, 
@@ -7550,6 +8118,7 @@ namespace Tuto.LemonWayAPI {
             this.intermediaryBicCode = intermediaryBicCode;
             this.intermediaryBankName = intermediaryBankName;
             this.intermediaryBankCountry = intermediaryBankCountry;
+            this.comment = comment;
             this.wlLogin = wlLogin;
             this.wlPass = wlPass;
             this.language = language;
@@ -7566,13 +8135,13 @@ namespace Tuto.LemonWayAPI {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public Tuto.LemonWayAPI.RegisterIBANResult RegisterIBANResult;
+        public Tuto.LemonWayAPI.RegisterIBANExtendedResult RegisterIBANExtendedResult;
         
         public RegisterIBANExtendedResponse() {
         }
         
-        public RegisterIBANExtendedResponse(Tuto.LemonWayAPI.RegisterIBANResult RegisterIBANResult) {
-            this.RegisterIBANResult = RegisterIBANResult;
+        public RegisterIBANExtendedResponse(Tuto.LemonWayAPI.RegisterIBANExtendedResult RegisterIBANExtendedResult) {
+            this.RegisterIBANExtendedResult = RegisterIBANExtendedResult;
         }
     }
     
@@ -9734,6 +10303,87 @@ namespace Tuto.LemonWayAPI {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="MoneyInMobilePayInit", WrapperNamespace="Service_mb_xml", IsWrapped=true)]
+    public partial class MoneyInMobilePayInitRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=0)]
+        public string wkToken;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=1)]
+        public string wallet;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=2)]
+        public string amountTot;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=3)]
+        public string amountCom;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=4)]
+        public string comment;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=5)]
+        public string returnUrl;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=6)]
+        public string autoCommission;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=7)]
+        public string wlLogin;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=8)]
+        public string wlPass;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=9)]
+        public string language;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=10)]
+        public string version;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=11)]
+        public string walletIp;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=12)]
+        public string walletUa;
+        
+        public MoneyInMobilePayInitRequest() {
+        }
+        
+        public MoneyInMobilePayInitRequest(string wkToken, string wallet, string amountTot, string amountCom, string comment, string returnUrl, string autoCommission, string wlLogin, string wlPass, string language, string version, string walletIp, string walletUa) {
+            this.wkToken = wkToken;
+            this.wallet = wallet;
+            this.amountTot = amountTot;
+            this.amountCom = amountCom;
+            this.comment = comment;
+            this.returnUrl = returnUrl;
+            this.autoCommission = autoCommission;
+            this.wlLogin = wlLogin;
+            this.wlPass = wlPass;
+            this.language = language;
+            this.version = version;
+            this.walletIp = walletIp;
+            this.walletUa = walletUa;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="MoneyInMobilePayInitResponse", WrapperNamespace="Service_mb_xml", IsWrapped=true)]
+    public partial class MoneyInMobilePayInitResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Tuto.LemonWayAPI.MoneyInMobilePayInitResult MoneyInMobilePayInitResult;
+        
+        public MoneyInMobilePayInitResponse() {
+        }
+        
+        public MoneyInMobilePayInitResponse(Tuto.LemonWayAPI.MoneyInMobilePayInitResult MoneyInMobilePayInitResult) {
+            this.MoneyInMobilePayInitResult = MoneyInMobilePayInitResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.MessageContractAttribute(WrapperName="CreatePaymentForm", WrapperNamespace="Service_mb_xml", IsWrapped=true)]
     public partial class CreatePaymentFormRequest {
         
@@ -9768,22 +10418,40 @@ namespace Tuto.LemonWayAPI {
         public string comment;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=10)]
-        public string language;
+        public string returnUrl;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=11)]
-        public string version;
+        public string cancelUrl;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=12)]
-        public string firstNamePayer;
+        public string errorUrl;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=13)]
-        public string lastNamePayer;
+        public string language;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=14)]
-        public string emailPayer;
+        public string version;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=15)]
+        public string firstNamePayer;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=16)]
+        public string lastNamePayer;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=17)]
+        public string emailPayer;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=18)]
         public string style;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=19)]
+        public string atosStyle;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=20)]
+        public string notifUrl;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=21)]
+        public string options;
         
         public CreatePaymentFormRequest() {
         }
@@ -9799,12 +10467,18 @@ namespace Tuto.LemonWayAPI {
                     string amountTot, 
                     string amountCom, 
                     string comment, 
+                    string returnUrl, 
+                    string cancelUrl, 
+                    string errorUrl, 
                     string language, 
                     string version, 
                     string firstNamePayer, 
                     string lastNamePayer, 
                     string emailPayer, 
-                    string style) {
+                    string style, 
+                    string atosStyle, 
+                    string notifUrl, 
+                    string options) {
             this.wlLogin = wlLogin;
             this.wlPass = wlPass;
             this.optId = optId;
@@ -9815,12 +10489,18 @@ namespace Tuto.LemonWayAPI {
             this.amountTot = amountTot;
             this.amountCom = amountCom;
             this.comment = comment;
+            this.returnUrl = returnUrl;
+            this.cancelUrl = cancelUrl;
+            this.errorUrl = errorUrl;
             this.language = language;
             this.version = version;
             this.firstNamePayer = firstNamePayer;
             this.lastNamePayer = lastNamePayer;
             this.emailPayer = emailPayer;
             this.style = style;
+            this.atosStyle = atosStyle;
+            this.notifUrl = notifUrl;
+            this.options = options;
         }
     }
     
@@ -9838,6 +10518,120 @@ namespace Tuto.LemonWayAPI {
         
         public CreatePaymentFormResponse(Tuto.LemonWayAPI.CreatePaymentFormResult CreatePaymentFormResult) {
             this.CreatePaymentFormResult = CreatePaymentFormResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="DisablePaymentForm", WrapperNamespace="Service_mb_xml", IsWrapped=true)]
+    public partial class DisablePaymentFormRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=0)]
+        public string wlLogin;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=1)]
+        public string wlPass;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=2)]
+        public string formId;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=3)]
+        public string walletIp;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=4)]
+        public string walletUa;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=5)]
+        public string language;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=6)]
+        public string version;
+        
+        public DisablePaymentFormRequest() {
+        }
+        
+        public DisablePaymentFormRequest(string wlLogin, string wlPass, string formId, string walletIp, string walletUa, string language, string version) {
+            this.wlLogin = wlLogin;
+            this.wlPass = wlPass;
+            this.formId = formId;
+            this.walletIp = walletIp;
+            this.walletUa = walletUa;
+            this.language = language;
+            this.version = version;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="DisablePaymentFormResponse", WrapperNamespace="Service_mb_xml", IsWrapped=true)]
+    public partial class DisablePaymentFormResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Tuto.LemonWayAPI.DisablePaymentFormResult DisablePaymentFormResult;
+        
+        public DisablePaymentFormResponse() {
+        }
+        
+        public DisablePaymentFormResponse(Tuto.LemonWayAPI.DisablePaymentFormResult DisablePaymentFormResult) {
+            this.DisablePaymentFormResult = DisablePaymentFormResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCompletedPaymentForm", WrapperNamespace="Service_mb_xml", IsWrapped=true)]
+    public partial class GetCompletedPaymentFormRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=0)]
+        public string wlLogin;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=1)]
+        public string wlPass;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=2)]
+        public string formId;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=3)]
+        public string walletIp;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=4)]
+        public string walletUa;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=5)]
+        public string language;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=6)]
+        public string version;
+        
+        public GetCompletedPaymentFormRequest() {
+        }
+        
+        public GetCompletedPaymentFormRequest(string wlLogin, string wlPass, string formId, string walletIp, string walletUa, string language, string version) {
+            this.wlLogin = wlLogin;
+            this.wlPass = wlPass;
+            this.formId = formId;
+            this.walletIp = walletIp;
+            this.walletUa = walletUa;
+            this.language = language;
+            this.version = version;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetCompletedPaymentFormResponse", WrapperNamespace="Service_mb_xml", IsWrapped=true)]
+    public partial class GetCompletedPaymentFormResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Service_mb_xml", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Tuto.LemonWayAPI.GetCompletedPaymentFormResult SetPaymentFormStatusResult;
+        
+        public GetCompletedPaymentFormResponse() {
+        }
+        
+        public GetCompletedPaymentFormResponse(Tuto.LemonWayAPI.GetCompletedPaymentFormResult SetPaymentFormStatusResult) {
+            this.SetPaymentFormStatusResult = SetPaymentFormStatusResult;
         }
     }
     
@@ -10228,12 +11022,36 @@ namespace Tuto.LemonWayAPI {
             return base.Channel.MoneyInPayTrailInitAsync(request);
         }
         
+        public Tuto.LemonWayAPI.MoneyInMobilePayInitResponse MoneyInMobilePayInit(Tuto.LemonWayAPI.MoneyInMobilePayInitRequest request) {
+            return base.Channel.MoneyInMobilePayInit(request);
+        }
+        
+        public System.Threading.Tasks.Task<Tuto.LemonWayAPI.MoneyInMobilePayInitResponse> MoneyInMobilePayInitAsync(Tuto.LemonWayAPI.MoneyInMobilePayInitRequest request) {
+            return base.Channel.MoneyInMobilePayInitAsync(request);
+        }
+        
         public Tuto.LemonWayAPI.CreatePaymentFormResponse CreatePaymentForm(Tuto.LemonWayAPI.CreatePaymentFormRequest request) {
             return base.Channel.CreatePaymentForm(request);
         }
         
         public System.Threading.Tasks.Task<Tuto.LemonWayAPI.CreatePaymentFormResponse> CreatePaymentFormAsync(Tuto.LemonWayAPI.CreatePaymentFormRequest request) {
             return base.Channel.CreatePaymentFormAsync(request);
+        }
+        
+        public Tuto.LemonWayAPI.DisablePaymentFormResponse DisablePaymentForm(Tuto.LemonWayAPI.DisablePaymentFormRequest request) {
+            return base.Channel.DisablePaymentForm(request);
+        }
+        
+        public System.Threading.Tasks.Task<Tuto.LemonWayAPI.DisablePaymentFormResponse> DisablePaymentFormAsync(Tuto.LemonWayAPI.DisablePaymentFormRequest request) {
+            return base.Channel.DisablePaymentFormAsync(request);
+        }
+        
+        public Tuto.LemonWayAPI.GetCompletedPaymentFormResponse GetCompletedPaymentForm(Tuto.LemonWayAPI.GetCompletedPaymentFormRequest request) {
+            return base.Channel.GetCompletedPaymentForm(request);
+        }
+        
+        public System.Threading.Tasks.Task<Tuto.LemonWayAPI.GetCompletedPaymentFormResponse> GetCompletedPaymentFormAsync(Tuto.LemonWayAPI.GetCompletedPaymentFormRequest request) {
+            return base.Channel.GetCompletedPaymentFormAsync(request);
         }
     }
 }

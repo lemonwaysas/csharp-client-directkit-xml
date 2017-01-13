@@ -55,11 +55,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Service References\LemonWayAPI\service.wsdl" />
+    <None Include="Service References\LemonWayAPI\Service1.wsdl" />
     <None Include="Service References\LemonWayAPI\Tuto.LemonWayAPI.CreatePaymentFormResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\LemonWayAPI\Tuto.LemonWayAPI.CreateVCCResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LemonWayAPI\Tuto.LemonWayAPI.DisablePaymentFormResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\LemonWayAPI\Tuto.LemonWayAPI.FastPayResponse.datasource">
@@ -69,6 +72,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\LemonWayAPI\Tuto.LemonWayAPI.GetChargebacksResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LemonWayAPI\Tuto.LemonWayAPI.GetCompletedPaymentFormResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\LemonWayAPI\Tuto.LemonWayAPI.GetKycStatusResponse.datasource">
@@ -120,6 +126,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\LemonWayAPI\Tuto.LemonWayAPI.MoneyInMbwayInitResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LemonWayAPI\Tuto.LemonWayAPI.MoneyInMobilePayInitResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\LemonWayAPI\Tuto.LemonWayAPI.MoneyInMultibancoInitResponse.datasource">
@@ -202,9 +211,6 @@
     <WCFMetadataStorage Include="Service References\LemonWayAPI\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\LemonWayAPI\service.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\LemonWayAPI\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -215,6 +221,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LemonWayAPI\Service1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

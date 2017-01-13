@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://ws.lemonway.fr/mb/dat/dev/directkitxml/service.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://sandbox-api.lemonway.fr/mb/demo/dev/directkitxml/Service.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.disco" MetadataType="Disco" ID="992f4acf-8514-4a10-b8bd-a398a8fd79b2" SourceId="1" SourceUrl="https://ws.lemonway.fr/mb/dat/dev/directkitxml/service.asmx?disco" />
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="f015d512-28d9-4269-8272-3532082f0712" SourceId="1" SourceUrl="https://ws.lemonway.fr/mb/dat/dev/directkitxml/service.asmx?wsdl" />
+    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="38dd853e-0c88-4b99-99e4-3c939da2ea09" SourceId="1" SourceUrl="https://sandbox-api.lemonway.fr/mb/demo/dev/directkitxml/Service.asmx?wsdl" />
+    <MetadataFile FileName="Service1.disco" MetadataType="Disco" ID="eb6fccff-4abf-4d23-8205-501cbca5e6cb" SourceId="1" SourceUrl="https://sandbox-api.lemonway.fr/mb/demo/dev/directkitxml/Service.asmx?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

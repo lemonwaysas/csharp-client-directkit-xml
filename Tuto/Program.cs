@@ -7,7 +7,7 @@ namespace Tuto
         static string wlLogin   = "society";
         static string wlPass    = "123456";
         static string language  = "en";
-        static string version   = "1.8";
+        static string version   = "2.0";
         static string walletIp  = "1.1.1.1";
         static string walletUa = "ua";
 
@@ -28,7 +28,7 @@ namespace Tuto
             request.wallet      = wallet;
 
             var result = soapClient.GetWalletDetails(request).GetWalletDetailsResult; // Method Name + "Result"
-
+            
             // Handle error
             if (result.E != null)
             {
@@ -44,44 +44,61 @@ namespace Tuto
                 Console.WriteLine("BAL: " + result.WALLET.BAL);
                 Console.WriteLine("NAME: " + result.WALLET.NAME);
                 Console.WriteLine("EMAIL: " + result.WALLET.EMAIL);
-                for (int i = 0; i < result.WALLET.DOCS.Length; i++)
+                if (result.WALLET.DOCS != null)
                 {
-                    Console.WriteLine("DOCS[" + i + "].ID: " + result.WALLET.DOCS[i].ID);
-                    Console.WriteLine("DOCS[" + i + "].S: " + result.WALLET.DOCS[i].S);
-                    Console.WriteLine("DOCS[" + i + "].TYPE: " + result.WALLET.DOCS[i].TYPE);
-                    Console.WriteLine("DOCS[" + i + "].VD: " + result.WALLET.DOCS[i].VD);
+                    for (int i = 0; i < result.WALLET.DOCS.Length; i++)
+                    {
+                        Console.WriteLine("DOCS[" + i + "].ID: " + result.WALLET.DOCS[i].ID);
+                        Console.WriteLine("DOCS[" + i + "].S: " + result.WALLET.DOCS[i].S);
+                        Console.WriteLine("DOCS[" + i + "].TYPE: " + result.WALLET.DOCS[i].TYPE);
+                        Console.WriteLine("DOCS[" + i + "].VD: " + result.WALLET.DOCS[i].VD);
+                    }
                 }
-                for (int i = 0; i < result.WALLET.IBANS.Length; i++)
+                if (result.WALLET.IBANS != null)
                 {
-                    Console.WriteLine("IBANS[" + i + "].ID: " + result.WALLET.IBANS[i].ID);
-                    Console.WriteLine("IBANS[" + i + "].S: " + result.WALLET.IBANS[i].S);
-                    Console.WriteLine("IBANS[" + i + "].DATA: " + result.WALLET.IBANS[i].DATA);
-                    Console.WriteLine("IBANS[" + i + "].SWIFT: " + result.WALLET.IBANS[i].SWIFT);
-                    Console.WriteLine("IBANS[" + i + "].HOLDER: " + result.WALLET.IBANS[i].HOLDER);
+                    for (int i = 0; i < result.WALLET.IBANS.Length; i++)
+                    {
+                        Console.WriteLine("IBANS[" + i + "].ID: " + result.WALLET.IBANS[i].ID);
+                        Console.WriteLine("IBANS[" + i + "].S: " + result.WALLET.IBANS[i].S);
+                        Console.WriteLine("IBANS[" + i + "].DATA: " + result.WALLET.IBANS[i].DATA);
+                        Console.WriteLine("IBANS[" + i + "].SWIFT: " + result.WALLET.IBANS[i].SWIFT);
+                        Console.WriteLine("IBANS[" + i + "].HOLDER: " + result.WALLET.IBANS[i].HOLDER);
+                    }
                 }
                 Console.WriteLine("STATUS: " + result.WALLET.STATUS);
                 Console.WriteLine("BLOCKED: " + result.WALLET.BLOCKED);
-                for (int i = 0; i < result.WALLET.SDDMANDATES.Length; i++)
+                if (result.WALLET.SDDMANDATES != null)
                 {
-                    Console.WriteLine("SDDMANDATES[" + i + "].ID: " + result.WALLET.SDDMANDATES[i].ID);
-                    Console.WriteLine("SDDMANDATES[" + i + "].S: " + result.WALLET.SDDMANDATES[i].S);
-                    Console.WriteLine("SDDMANDATES[" + i + "].DATA: " + result.WALLET.SDDMANDATES[i].DATA);
-                    Console.WriteLine("SDDMANDATES[" + i + "].SWIFT: " + result.WALLET.SDDMANDATES[i].SWIFT);
-                }
-                Console.WriteLine("LWID: " + result.WALLET.LWID);
-                for (int i = 0; i < result.WALLET.CARDS.Length; i++)
-                {
-                    Console.WriteLine("CARDS[" + i + "].ID: " + result.WALLET.CARDS[i].ID);
-                    if (result.WALLET.CARDS[i].EXTRA != null)
+                    for (int i = 0; i < result.WALLET.SDDMANDATES.Length; i++)
                     {
-                        Console.WriteLine("CARDS[" + i + "].EXTRA.IS3DS: " + result.WALLET.CARDS[i].EXTRA.IS3DS);
-                        Console.WriteLine("CARDS[" + i + "].EXTRA.CTRY: " + result.WALLET.CARDS[i].EXTRA.CTRY);
-                        Console.WriteLine("CARDS[" + i + "].EXTRA.AUTH: " + result.WALLET.CARDS[i].EXTRA.AUTH);
-                        Console.WriteLine("CARDS[" + i + "].EXTRA.NUM: " + result.WALLET.CARDS[i].EXTRA.NUM);
-                        Console.WriteLine("CARDS[" + i + "].EXTRA.EXP: " + result.WALLET.CARDS[i].EXTRA.EXP);
-                        Console.WriteLine("CARDS[" + i + "].EXTRA.TYP: " + result.WALLET.CARDS[i].EXTRA.TYP);
+                        Console.WriteLine("SDDMANDATES[" + i + "].ID: " + result.WALLET.SDDMANDATES[i].ID);
+                        Console.WriteLine("SDDMANDATES[" + i + "].S: " + result.WALLET.SDDMANDATES[i].S);
+                        Console.WriteLine("SDDMANDATES[" + i + "].DATA: " + result.WALLET.SDDMANDATES[i].DATA);
+                        Console.WriteLine("SDDMANDATES[" + i + "].SWIFT: " + result.WALLET.SDDMANDATES[i].SWIFT);
                     }
                 }
+                Console.WriteLine("LWID: " + result.WALLET.LWID);
+                if (result.WALLET.CARDS != null)
+                {
+                    for (int i = 0; i < result.WALLET.CARDS.Length; i++)
+                    {
+                        Console.WriteLine("CARDS[" + i + "].ID: " + result.WALLET.CARDS[i].ID);
+                        if (result.WALLET.CARDS[i].EXTRA != null)
+                        {
+                            Console.WriteLine("CARDS[" + i + "].EXTRA.IS3DS: " + result.WALLET.CARDS[i].EXTRA.IS3DS);
+                            Console.WriteLine("CARDS[" + i + "].EXTRA.CTRY: " + result.WALLET.CARDS[i].EXTRA.CTRY);
+                            Console.WriteLine("CARDS[" + i + "].EXTRA.AUTH: " + result.WALLET.CARDS[i].EXTRA.AUTH);
+                            Console.WriteLine("CARDS[" + i + "].EXTRA.NUM: " + result.WALLET.CARDS[i].EXTRA.NUM);
+                            Console.WriteLine("CARDS[" + i + "].EXTRA.EXP: " + result.WALLET.CARDS[i].EXTRA.EXP);
+                            Console.WriteLine("CARDS[" + i + "].EXTRA.TYP: " + result.WALLET.CARDS[i].EXTRA.TYP);
+                        }
+                    }
+                }
+                Console.WriteLine("FirstName: " + result.WALLET.FirstName);
+                Console.WriteLine("LastName: " + result.WALLET.LastName);
+                Console.WriteLine("CompanyName: " + result.WALLET.CompanyName);
+                Console.WriteLine("CompanyDescription: " + result.WALLET.CompanyDescription);
+                Console.WriteLine("CompanyWebsite: " + result.WALLET.CompanyWebsite);
             }
         }
 
@@ -149,9 +166,9 @@ namespace Tuto
             try
             {
                 Console.WriteLine("----------GetWalletDetailsExample----------");
-                GetWalletDetailsExample("testSDD");
+                GetWalletDetailsExample("SC");
                 Console.WriteLine("----------GetWalletTransHistoryExample----------");
-                GetWalletTransHistoryExample("testSDD");
+                GetWalletTransHistoryExample("SC");
             }
             catch (Exception ex)
             {
