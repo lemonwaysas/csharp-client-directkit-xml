@@ -1,3 +1,5 @@
+⚠️WARNING: This client is deprecated⚠️ 
+
 # c-sharp-client-directkit-xml
 
 This example show how to consume [LemonWay API XML WebService](http://documentation.lemonway.fr/api-en) using C# .NET framework 4.6
